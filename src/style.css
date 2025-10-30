@@ -29,7 +29,7 @@ body {
   flex-direction: column;
   justify-content: center;
   gap: 2rem;
-  padding: 1.5rem;
+  padding: 2.5rem 1.5rem 1.5rem;
   border-radius: 1rem;
 }
 #display {
@@ -38,7 +38,6 @@ body {
   font-size: 2rem;
   text-align: end;
   padding: 0.5rem 1rem;
-  margin-top: 2rem;
   border-radius: 2rem;
   border: none;
   outline: none;
@@ -57,7 +56,8 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.btn {
+.btn,
+.del {
   background: var(--ocean-light);
   color: var(--white);
   font-size: 1rem;
@@ -71,7 +71,8 @@ body {
   transition: all 0.3s ease;
   box-shadow: inset 0rem 0rem 3rem var(--ocean-deep);
 }
-.btn:hover {
+.btn:hover,
+.del:hover {
   background: var(--ocean-medium);
   box-shadow: inset 0rem 0rem 3rem var(--ocean-deep);
 }
@@ -90,6 +91,7 @@ body {
   background: var(--sunset-orange);
 }
 .btn:active,
+.del:active,
 .big-btn:active {
   transform: scale(0.9);
 }
