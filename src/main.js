@@ -1,10 +1,10 @@
 import "./style.css";
 
-const display = document.querySelector("#display");
+const display = document.getElementById("display");
 const btns = document.querySelectorAll(".btn");
 const clrButton = document.getElementById("clr");
 const delBtn = document.getElementById("del");
-const eqlButton = document.getElementById("eql");
+const eql = document.getElementById("eql");
 
 // SELECTION OF INDIVIDUAL BTN
 btns.forEach((btn) => {
@@ -26,11 +26,13 @@ delBtn.addEventListener("click", () => {
   saveData();
 });
 
-// EVALUTION OF THE OPRATOPS
-eqlButton.addEventListener("click", () => {
+// EVALUTION OF THE OPERATOPS
+eql.addEventListener("click", () => {
   const expression = display.value.replace(/x/g, "*");
   let result = eval(expression);
-  if (!isNaN(result)) {
+  if (isNaN(result) || !isFinite(result)) {
+    result = "Error";
+  } else {
     result = parseFloat(result).toFixed(2);
   }
   display.value = result;
